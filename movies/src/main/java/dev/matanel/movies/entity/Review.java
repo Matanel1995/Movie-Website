@@ -1,4 +1,4 @@
-package dev.matanel.movies;
+package dev.matanel.movies.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

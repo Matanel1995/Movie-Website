@@ -1,5 +1,8 @@
-package dev.matanel.movies;
+package dev.matanel.movies.service;
 
+import dev.matanel.movies.repository.ReviewRepository;
+import dev.matanel.movies.entity.Movie;
+import dev.matanel.movies.entity.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;

@@ -1,5 +1,7 @@
-package dev.matanel.movies;
+package dev.matanel.movies.controller;
 
+import dev.matanel.movies.entity.Review;
+import dev.matanel.movies.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

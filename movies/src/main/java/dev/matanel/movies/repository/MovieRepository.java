@@ -1,5 +1,6 @@
-package dev.matanel.movies;
+package dev.matanel.movies.repository;
 
+import dev.matanel.movies.entity.Movie;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

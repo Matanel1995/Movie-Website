@@ -1,7 +1,11 @@
-package dev.matanel.movies;
+package dev.matanel.movies.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import dev.matanel.movies.entity.Movie;
+import dev.matanel.movies.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,12 +15,15 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 @RequestMapping("/api/v1/movies")
 public class MovieController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(MovieController.class);
+
     @Autowired
     private MovieService movieService;
 
     /// Function to get all movies from the DB
     @GetMapping
     public ResponseEntity<List<Movie>> getAllMovies(){
+        LOGGER.info("Got to all movies function");
         return new ResponseEntity<List<Movie>>(movieService.allMovies(),HttpStatus.OK);
     }
 
