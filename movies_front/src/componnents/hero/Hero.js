@@ -1,10 +1,19 @@
 import React from 'react'
 import './Hero.css'
 import Carousel from 'react-material-ui-carousel';
-import { Paper } from '@mui/material';
+import { Button, Paper } from '@mui/material';
+import {Link, useNavigate} from "react-router-dom";
 
 
 const Hero = ({ favMovies }) => {
+
+    const navigate = useNavigate();
+
+    function toMoviePage(movieId)
+    {
+        navigate(`/movies/${movieId}`);
+    }
+
         return (
             <div className='movie-carousel-container'>
                 <Carousel>

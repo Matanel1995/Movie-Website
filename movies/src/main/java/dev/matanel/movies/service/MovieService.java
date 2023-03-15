@@ -10,6 +10,7 @@ import java.util.Optional;
 
 
 //In this class i will write the database access methods
+
 @Service
 public class MovieService {
     @Autowired //the framework will instantiate the movieRepository for us

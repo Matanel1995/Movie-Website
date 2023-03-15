@@ -12,8 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/api/v1/movies")
+//@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 public class MovieController {
     private static final Logger LOGGER = LoggerFactory.getLogger(MovieController.class);
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { useNavigate , useLocation} from "react-router-dom";
 import './HomePage.css'
 import Header from '../componnents/header/Header'
 import MovieCard from "../componnents/MovieCard";
@@ -14,12 +15,20 @@ const HomePage = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [favMovies, setFavMovies] = useState([]);
+    const location = useLocation();
 
     //Functions
 
+
+    let navigate = useNavigate();
+    const routeChange = (newPath) => {
+        let path = newPath;
+        navigate(path);
+    }
+
     const getMovies = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/v1/movies');
+            const response = await fetch('http://localhost:8080/api/movies/all');
             const data = await response.json();
             setMovies(data);
         } catch (err) {
@@ -29,10 +38,12 @@ const HomePage = () => {
 
     const getFavMovies = async () => {
         try {
-            const response = await fetch("http://localhost:8080/api/v1/movies/favorite/true");
+            const response = await fetch("http://localhost:8080/api/movies/allFav");
+            console.log(response);
             const data = await response.json();
-
+            console.log(data);
             setFavMovies(data);
+            console.log("favMovies length: ", favMovies.length);
         } catch (err) {
             console.log(err);
         }
@@ -50,19 +61,16 @@ const HomePage = () => {
             return movie.title.toLowerCase().includes(searchTerm.toLowerCase());
         });
         setSearchResults(filtered);
-    }, [searchTerm, movies]);
-
-    useEffect(() => {
-        console.log(movies);
-    }, [movies]);
+    }, [searchTerm]);
 
     useEffect(() => {
         getMovies();
-    }, []);
+    }, [location.pathname]);
+
 
     useEffect(() => {
         getFavMovies();
-    }, [favMovies]);
+    }, []);
 
     const handleKeyDown = (event) => {
 
@@ -75,7 +83,9 @@ const HomePage = () => {
         <div className="app">
             <Header />
             <div className="without-header">
-                <h1>Movies App</h1>
+                <div onClick={() => {}}>
+                    <h1>Movies App</h1>
+                </div>
                 {
                     favMovies?.length > 0 ?
                         (<Hero favMovies={favMovies} />)
@@ -101,7 +111,7 @@ const HomePage = () => {
                         ? (
                             <div className="container">
                                 {movieList.map((movie, index) => (
-                                    <MovieCard key={uuidv4()} movie={movie} />
+                                    <MovieCard key={uuidv4()} movie={movie} onClick = { () => {routeChange(`/movies/${movie.imdbId}`)}}/>
                                 ))}
                             </div>
                         ) : (
