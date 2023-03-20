@@ -120,6 +120,12 @@ span{
     display: none;
 }
 
+.emailExist-signUpPage p{
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+}
+
 input:invalid ~ span{
     display: block;
 }

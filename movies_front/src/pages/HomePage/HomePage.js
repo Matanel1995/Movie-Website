@@ -3,10 +3,10 @@ import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate , useLocation} from "react-router-dom";
 import './HomePage.css'
-import Header from '../componnents/header/Header'
-import MovieCard from "../componnents/MovieCard";
-import SearchIcon from '../Photos/search.svg';
-import Hero from "../componnents/hero/Hero";
+import Header from '../../componnents/header/Header'
+import MovieCard from "../../componnents/MovieCard";
+import SearchIcon from '../../Photos/search.svg';
+import Hero from "../../componnents/hero/Hero";
 
 
 const HomePage = () => {

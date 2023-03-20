@@ -10,7 +10,7 @@ const SignUpPage = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [existEmail, setExistEmail] = useState("Should look like: example@mail.com");
+    const [existEmail, setExistEmail] = useState('');
 
 
     //Functiuons
@@ -36,8 +36,8 @@ const SignUpPage = () => {
             if (response.status === 401) {
                 setExistEmail("Email address allready in use.");
             }
-            else{
-                setExistEmail("Should look like: example@mail.com");
+            else {
+                setExistEmail('');
                 routeChange('/');
             }
             console.log(existEmail);
@@ -46,32 +46,6 @@ const SignUpPage = () => {
             console.log(err);
         }
     }
-
-    // const getUsers = async() => {
-    //     try {
-    //         const response = await fetch('http://localhost:8080/api/users/all'
-    //             , {
-    //                 method: 'GET',
-    //                 mode: 'cors',
-    //                 credentials: 'include'
-    //             }
-    //             );
-    //         const data = await response.json();
-    //         console.log(data);
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // }
-
-
-
-    // const createUser = async () => {
-    //     //check valid inputs username and password
-    //     //check if email exist in DB allready
-    //     //    if yes - return error msg that say email allready exist
-    //     //    else - create new user in db with the provided information
-    // }
-
 
     return (
         <div className="SignUp">
@@ -104,7 +78,10 @@ const SignUpPage = () => {
                     onChange={(e) => { setEmail(e.target.value) }}
                     pattern="^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,})$"
                 />
-                    <span>{existEmail}</span>
+                <span>Should look like: example@mail.com</span>
+                <div className="emailExist-signUpPage">
+                    <p>{existEmail}</p>
+                </div>
             </div>
             <div className="buttons-container">
                 <div className="confirm-button">
