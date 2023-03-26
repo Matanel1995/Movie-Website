@@ -16,7 +16,7 @@ const App = () => {
 
 const getSingleMovie = async (movieId) => {
     try {
-        const response = await fetch(`http://https://movie-back-oghj.onrender.com//api/movies/${movieId}`);
+        const response = await fetch(`https://movie-back-oghj.onrender.com/api/movies/${movieId}`);
         const data = await response.json();
         console.log(data);
         setMovie(data);

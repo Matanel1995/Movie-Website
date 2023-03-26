@@ -21,7 +21,9 @@ const MoviePage = ({ getSingleMovie, movie }) => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             // console.log(movie[0]?.reviewIds.length)
-            setPosterIndex(prevIndex => (prevIndex + 1) % movie[0]?.backdrops.length);
+            if (movie) {
+                setPosterIndex(prevIndex => (prevIndex + 1) % movie[0]?.backdrops.length);
+            }
         }, 3000);
 
         return () => clearInterval(intervalId);

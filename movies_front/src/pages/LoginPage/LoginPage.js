@@ -30,6 +30,7 @@ function LoginPage() {
         console.log('inside login user function');
         const response = await fetch("http://movie-back-oghj.onrender.com/api/auth/login"
             , {
+                mode: 'no-cors',
                 method: 'POST',
                 body: userJson,
                 headers: { 'Content-Type': 'application/json', }
