@@ -16,12 +16,10 @@ const App = () => {
 
 const getSingleMovie = async (movieId) => {
     try {
-        const response = await fetch(`http://localhost:8080/api/movies/${movieId}`);
+        const response = await fetch(`http://https://movie-back-oghj.onrender.com//api/movies/${movieId}`);
         const data = await response.json();
         console.log(data);
         setMovie(data);
-        // console.log(movie[0]?.title);
-        // setReviews(data.reviews);
     } catch (err) {
         console.log(err);
     }

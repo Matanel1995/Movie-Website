@@ -28,7 +28,8 @@ const HomePage = () => {
 
     const getMovies = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/movies/all');
+            //const response = await fetch('http://localhost:8080/api/movies/all');\
+            const response = await fetch('https://movie-back-oghj.onrender.com/api/movies/all');
             const data = await response.json();
             setMovies(data);
         } catch (err) {
@@ -38,7 +39,8 @@ const HomePage = () => {
 
     const getFavMovies = async () => {
         try {
-            const response = await fetch("http://localhost:8080/api/movies/allFav");
+            // const response = await fetch("http://localhost:8080/api/movies/allFav");
+            const response = await fetch('https://movie-back-oghj.onrender.com/api/movies/allFav');
             console.log(response);
             const data = await response.json();
             console.log(data);

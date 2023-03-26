@@ -24,7 +24,7 @@ const SignUpPage = () => {
     const createUser = async (userJson) => {
         console.log("inside create user");
         try {
-            const response = await fetch("http://localhost:8080/api/auth/register"
+            const response = await fetch("http://movie-back-oghj.onrender.com/api/auth/register"
                 , {
                     method: 'POST',
                     body: userJson,
