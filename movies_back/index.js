@@ -21,7 +21,7 @@ mongoose
 //allow json format
 app.use(express.json());
 app.use(cors({
-  origin: 'https://movie-back-oghj.onrender.com/'
+  origin: 'https://movie-back-oghj.onrender.com:8080/'
 }));
 
 
