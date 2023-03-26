@@ -56,7 +56,7 @@ const MoviePage = ({ getSingleMovie, movie }) => {
                     width="1024px"
                     height="540px" />
             </div>
-            <div className='reviews'>
+            {/* <div className='reviews'>
                 <h2>Reviews:</h2>
                 <div className='showReviews-MoviePage'>
                     <Reviews movie={movie} reviews={movie && movie[0]?.reviewIds} />
@@ -65,7 +65,7 @@ const MoviePage = ({ getSingleMovie, movie }) => {
                     <ReviewForm />
                     <button name='Submit' onClick={() => {}} />
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
