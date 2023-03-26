@@ -28,9 +28,8 @@ function LoginPage() {
     //Function to login
     const LoginUser = async (userJson) => {
         console.log('inside login user function');
-        const response = await fetch("http://movie-back-oghj.onrender.com/api/auth/login"
+        const response = await fetch("https://movie-back-oghj.onrender.com/api/auth/login"
             , {
-                mode: 'no-cors',
                 method: 'POST',
                 body: userJson,
                 headers: { 'Content-Type': 'application/json', }
