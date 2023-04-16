@@ -1,54 +1,89 @@
-
 .movie-backgroun-image {
-    position: relative;
-    width: 100vw;
-    height: 40vw;
-  }
-  
-  .movie-backgroun-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, rgba(33,36,38,0), rgba(33,36,38,0.98));
-  }
+  position: relative;
+  width: 100%;
+  height: 40vw;
+  max-height: 600px;
+}
 
+.movie-backgroun-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(33,36,38,0), rgba(33,36,38,0.98));
+}
 
-  .movie-backgroun-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.movie-backgroun-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
- 
-  
-  .movie-poster-moviePage img{
-    position: absolute;
+.movie-poster-moviePage img {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  max-height: 450px;
+  border-radius: 10px;
+}
+
+.movie-title-moviePage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tralier-container {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  max-height: 450px;
+}
+
+.reviews {
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 768px) { /* adjust as needed */
+  .movie-poster-moviePage img {
     top: 37%;
     left: 12%;
+    transform: none;
     width: 300px;
     height: 450px;
-    border-radius: 10px;
   }
-
+  
   .movie-title-moviePage {
-    position: absolute;
     top: 54%;
     left: 32%;
+    transform: none;
   }
-
-  .tralier-container{
-    position: absolute;
+  
+  .tralier-container {
     top: 80%;
     left: 30%;
+    transform: none;
     width: 300px;
     height: 450px;
   }
-
-  .reviews{
-    position: absolute;
+  
+  .reviews {
     top: 140%;
     left: 20%;
+    transform: none;
   }
+}
